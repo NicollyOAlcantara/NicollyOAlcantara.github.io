@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfólio · Analista de Dados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,700..900,100,1;1,9..144,700..900,100,1&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" id="logo"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#competencias">Competências</a></li>
+        <li><a href="#curriculo">Currículo</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" aria-label="Alternar tema claro e escuro">◐</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <p class="status" id="status"></p>
+        <h1 id="heroTitle"></h1>
+        <p class="lead" id="heroText"></p>
+        <ul class="traits" id="traits"></ul>
+        <div class="cta">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="#contato">Falar comigo</a>
+          <a class="btn ghost" id="cvBtn" href="#" target="_blank" rel="noopener">Baixar currículo</a>
+        </div>
+      </div>
+      <div class="photo">
+        <div class="frame"><img id="photo" alt="Retrato sorrindo, de óculos e cabelo longo, em frente a uma parede azul" src="assets/foto.jpg"></div>
+        <span class="sticker s1" aria-hidden="true"><img alt="" src="assets/sticker-grafico.jpg"></span><span class="sticker s2" aria-hidden="true"><img alt="" src="assets/sticker-dados.jpg"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="wrap about">
+      <div>
+        <code class="q">SELECT * FROM sobre_mim;</code>
+        <h2>Resumo executivo</h2>
+        <div id="aboutText"></div>
+      </div>
+      <div class="facts" id="facts"></div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="wrap">
+      <code class="q">SELECT * FROM competencias ORDER BY destaque DESC;</code>
+      <h2>Minhas competências</h2>
+      <p class="lead">O que eu levo para o time: técnica, organização e cuidado com cada detalhe.</p>
+      <div class="comps" id="comps"></div>
+    </div>
+  </section>
+
+  <section id="curriculo">
+    <div class="wrap">
+      <code class="q">FROM curriculo ORDER BY data DESC;</code>
+      <h2>Histórico de dados</h2>
+      <p class="lead">Minha formação e minha experiência.</p>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div id="panels"></div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <code class="q">SELECT * FROM projetos WHERE status = 'pronto';</code>
+      <h2>Relatórios e dashboards</h2>
+      <p class="lead">Análises e dashboards que construí para praticar e mostrar como penso os dados.</p>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="projects"></div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact">
+        <code class="q">INNER JOIN voce ON interesse;</code>
+        <h2 id="contactTitle"></h2>
+        <p id="contactText"></p>
+        <div class="links" id="contactLinks"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="lightbox" aria-label="Galeria do dashboard">
+  <div class="lb">
+    <header><strong id="lbTitle"></strong><span id="lbCount"></span><button id="lbClose" type="button" aria-label="Fechar">✕</button></header>
+    <div class="lbstage"><button id="lbPrev" type="button" aria-label="Página anterior">‹</button><img id="lbImg" alt=""><button id="lbNext" type="button" aria-label="Próxima página">›</button></div>
+  </div>
+</dialog>
+
+<footer><div class="wrap" id="footer"></div></footer>
+
+<!-- Edite js/data.js para mudar textos, projetos e links -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

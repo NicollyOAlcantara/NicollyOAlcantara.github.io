@@ -1,0 +1,20 @@
+PORTFÓLIO - NICOLLY ALCÂNTARA
+
+COMO ABRIR
+Dê dois cliques em index.html. Precisa de internet só para carregar as fontes.
+
+O QUE EDITAR
+js/data.js      -> textos, experiência, projetos e links (tudo está aqui)
+css/style.css   -> cores (bloco :root no topo) e visual
+assets/         -> foto, capas e páginas dos dashboards, adesivos e o PDF do currículo
+                   (para atualizar o currículo, troque assets/curriculo-nicolly-alcantara.pdf)
+js/main.js      -> lógica da página (normalmente não precisa mexer)
+
+TROCAR A CAPA DE UM PROJETO
+Substitua o arquivo em assets/projetos/ mantendo o mesmo nome.
+
+PUBLICAR DE GRAÇA (GitHub Pages)
+1. Crie um repositório chamado seu-usuario.github.io
+2. Envie todo o conteúdo desta pasta (index.html na raiz)
+3. Em Settings > Pages, escolha a branch main
+O site fica em https://seu-usuario.github.io

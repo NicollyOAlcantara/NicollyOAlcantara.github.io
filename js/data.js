@@ -1,6 +1,6 @@
 const DATA = {
   nome: "Nicolly Alcântara",
-  cargo: "Analista de dados em formação",
+  cargo: "Analista de dados júnior",
   cidade: "Queluz, SP",
   disponivel: "Disponível para oportunidades",
   idade: new Date().getFullYear() - 2004 - (new Date() < new Date(new Date().getFullYear(), 11, 15) ? 1 : 0),

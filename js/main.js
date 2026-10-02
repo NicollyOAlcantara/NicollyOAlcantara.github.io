@@ -4,7 +4,7 @@ const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls)
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function renderHero() {
-  document.title = `${DATA.nome} · Portfólio`;
+  document.title = `${DATA.nome} | ${DATA.cargo}`;
   const first = DATA.nome.split(" ")[0];
   $("logo").innerHTML = `${esc(first)}<i>.</i>`;
   $("status").textContent = DATA.disponivel;
@@ -57,9 +57,9 @@ function renderProjects() {
   });
   DATA.projetos.forEach((p, idx) => {
     const links = [p.galeria && `<button class="open" type="button">Ver dashboard</button>`, p.link && `<a href="${esc(p.link)}" target="_blank" rel="noopener">Ver projeto</a>`, p.repo && `<a href="${esc(p.repo)}" target="_blank" rel="noopener">Código</a>`].filter(Boolean).join("");
-    const c = el("article", "card", `<button class="thumb" type="button" aria-label="Ver dashboard: ${esc(p.titulo)}">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : ""}</button><div class="body"><h3>${esc(p.titulo)}</h3><p>${esc(p.texto)}</p><div class="chips">${p.tech.map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div><div class="links">${links}</div></div>`);
+    const c = el("article", "card", `<button class="thumb${p.galeria ? " zoom" : ""}" type="button" aria-label="Ver dashboard: ${esc(p.titulo)}">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : `<div class="bars" aria-hidden="true">${[40, 65, 50, 85, 60, 100].map((h, k) => `<b style="--h:${h}%;--i:${k}"></b>`).join("")}</div>`}</button><div class="body"><h3>${esc(p.titulo)}</h3><p>${esc(p.texto)}</p><div class="chips">${p.tech.map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div><div class="links">${links}</div></div>`);
     c.dataset.tipo = p.tipo;
-    c.querySelectorAll(".thumb, .open").forEach(b => b.onclick = () => openLightbox(p)); $("projects").append(c);
+    if (p.galeria) c.querySelectorAll(".thumb, .open").forEach(b => b.onclick = () => openLightbox(p)); $("projects").append(c);
   });
 }
 

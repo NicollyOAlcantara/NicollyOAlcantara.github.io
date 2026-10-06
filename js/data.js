@@ -15,8 +15,7 @@ const DATA = {
   fatos: [
     ["Idade", null],
     ["Formação", "Tecnóloga em ADS, Fatec (2025)"],
-    ["Foco", "SQL, Excel e Power BI"],
-    ["Localização", null]
+    ["Foco", "SQL, Excel e Power BI"]
   ],
   formacao: [
     {titulo: "Tecnologia em Análise e Desenvolvimento de Sistemas", onde: "Fatec Prof. Waldomiro May", quando: "Concluído em 2025", texto: "Base em programação, bancos de dados, engenharia de software e levantamento de requisitos."},
